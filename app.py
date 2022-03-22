@@ -4,8 +4,10 @@ import numpy as np
 import joblib
 from sklearn.ensemble import RandomForestClassifier
 from Prediction import get_prediction, LabelEncoder
+from load_model import get_model
 
-model = joblib.load(r'Model/RTA_severity model.pkl')
+rf_model = get_model(model_path = r'Model/RTA_severity model.pkl')
+
 
 st.set_page_config(page_title="Accident Severity Prediction App",
                    page_icon="🚧", layout="wide")
@@ -134,7 +136,7 @@ def main():
                             Pedestrian_movement,Age_band_of_casualty
                             ]).reshape(1,-1)
 
-        pred = get_prediction(data=data, model=model)
+        pred = get_prediction(data=data, model=rf_model)
 
         st.write(f"The predicted severity is:  {pred[0]}")
 
