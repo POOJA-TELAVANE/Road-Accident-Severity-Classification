@@ -136,8 +136,12 @@ def main():
                             ]).reshape(1,-1)
 
         pred = get_prediction(data=data, model=rf_model)
-
-        st.write(f"The predicted severity is:  {pred[0]}")
+if pred == 1:
+        st.write(f"The predicted severity is slight injury:  {pred[0]}")
+elif pred == 0:
+        st.write(f"The predicted severity is no injury:  {pred[0]}")
+else:
+        st.write(f"The predicted severity is severe injury:  {pred[0]}")
 
 
 if __name__ == '__main__':
