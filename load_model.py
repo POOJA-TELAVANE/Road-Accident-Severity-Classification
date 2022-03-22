@@ -12,8 +12,8 @@ def get_model(model_path):
         # example url: "https://drive.google.com/u/1/uc?id=18IxYOI-whucBTZmt5qTvvYgjlxleaSqO&export=download"
         url = "https://drive.google.com/u/0/uc?id=1eZQFdqwAMHLsjwD2C-PyvcZlVAwmAudD&export=download"
         r = requests.get(url, allow_redirects=True)
-        open(r"Model/model.pkl", 'wb').write(r.content)
+        open(r"model.pkl", 'wb').write(r.content)
         del r
-        with open(r"Model/RTA_severity model.pkl", "rb") as m:
+        with open(r"RTA_severity model.pkl", "rb") as m:
             rf = joblib.load(m)
     return rf
