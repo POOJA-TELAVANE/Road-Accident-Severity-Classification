@@ -10,7 +10,7 @@ def get_model(model_path):
         print("Cannot fetch model from local downloading from drive")
 
         # example url: "https://drive.google.com/u/1/uc?id=18IxYOI-whucBTZmt5qTvvYgjlxleaSqO&export=download"
-        url = "Paste your shareable url here after uploading it to google drive"
+        url = "https://drive.google.com/file/d/1eZQFdqwAMHLsjwD2C-PyvcZlVAwmAudD/view?usp=sharing"
         r = requests.get(url, allow_redirects=True)
         open(r"models/model.pkl", 'wb').write(r.content)
         del r
