@@ -92,7 +92,6 @@ def main():
         hour = st.slider("Pickup Hour: ", 0, 23, value=0, format="%d")
         casualties = st.slider("Hour of Accident: ", 1, 8, value=0, format="%d")
         accident_cause = st.selectbox("Select Accident Cause: ", options=options_cause)
-        vehicles_involved = st.slider("Pickup Hour: ", 1, 7, value=0, format="%d")
         vehicle_type = st.selectbox("Select Vehicle Type: ", options=options_vehicle_type)
         driver_age = st.selectbox("Select Driver Age: ", options=options_age)
         accident_area = st.selectbox("Select Accident Area: ", options=options_acc_area)
