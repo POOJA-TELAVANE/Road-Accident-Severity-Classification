@@ -80,7 +80,7 @@ options_Age_band_of_casualty = ['na', '31-50', '18-30', 'Under 18', 'Over 51', '
 
 
 
-features = ['hour','casualties','accident_cause','vehicles_involved','vehicle_type','driver_age','accident_area','driving_experience','lanes']
+features = ['hour','casualties','accident_cause','vehicle_type','driver_age','accident_area','driving_experience','lanes']
 
 
 st.markdown("<h1 style='text-align: center;'>Accident Severity Prediction App 🚧</h1>", unsafe_allow_html=True)
@@ -128,12 +128,10 @@ def main():
         
 
 
-        data = np.array([hour,casualties,accident_cause,vehicles_involved, 
-                            vehicle_type,driver_age,accident_area,driving_experience,
-                            lanes,Road_allignment,Types_of_Junction,Road_surface_conditions,
-                            Light_conditions,Weather_conditions,Type_of_collision,Number_of_vehicles_involved,
-                            Pedestrian_movement,Age_band_of_casualty
-                            ]).reshape(1,-1)
+        data = np.array([driver_age,driving_experience,vehicle_type,accident_area, lanes,Road_allignment,Types_of_Junction,Road_surface_conditions,
+                         Light_conditions,Weather_conditions,Type_of_collision,Number_of_vehicles_involved,casualties,Age_band_of_casualty,Pedestrian_movement,
+                         accident_cause,driver_age
+                         ]).reshape(1,-1)
 
         pred = get_prediction(data=data, model=rf_model)
         if pred[0]==0:
