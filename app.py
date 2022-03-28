@@ -79,6 +79,8 @@ options_Pedestrian_movement = ['Not a Pedestrian', "Crossing from driver's nears
 options_Age_band_of_casualty = ['na', '31-50', '18-30', 'Under 18', 'Over 51', '5']
 
 
+options_casualty_class = ['na', 'Driver or rider', 'Pedestrian', 'Passenger']
+
 
 features = ['hour','casualties','accident_cause','vehicle_type','driver_age','accident_area','driving_experience','lanes']
 
@@ -92,6 +94,7 @@ def main():
         hour = st.slider("Pickup Hour: ", 0, 23, value=0, format="%d")
         casualties = st.slider("Hour of Accident: ", 1, 8, value=0, format="%d")
         accident_cause = st.selectbox("Select Accident Cause: ", options=options_cause)
+        casualty_class = st.selectbox("Select casualty class : ", options=options_casualty_class)
         vehicle_type = st.selectbox("Select Vehicle Type: ", options=options_vehicle_type)
         driver_age = st.selectbox("Select Driver Age: ", options=options_age)
         accident_area = st.selectbox("Select Accident Area: ", options=options_acc_area)
@@ -114,6 +117,7 @@ def main():
         
         accident_cause = LabelEncoder(accident_cause, options_cause)
         vehicle_type = LabelEncoder(vehicle_type, options_vehicle_type)
+        casualty_class = LabelEncoder(casualty_class, options_casualty_class)
         driver_age =  LabelEncoder(driver_age, options_age)
         accident_area =  LabelEncoder(accident_area, options_acc_area)
         driving_experience = LabelEncoder(driving_experience, options_driver_exp) 
@@ -129,8 +133,8 @@ def main():
 
 
         data = np.array([driver_age,driving_experience,vehicle_type,accident_area, lanes,Road_allignment,Types_of_Junction,Road_surface_conditions,
-                         Light_conditions,Weather_conditions,Type_of_collision,Number_of_vehicles_involved,casualties,Age_band_of_casualty,Pedestrian_movement,
-                         accident_cause,driver_age
+                         Light_conditions,Weather_conditions,Type_of_collision,Number_of_vehicles_involved,casualties,Age_band_of_casualty,casualty_class,
+                         Pedestrian_movement, accident_cause
                          ]).reshape(1,-1)
 
         pred = get_prediction(data=data, model=rf_model)
