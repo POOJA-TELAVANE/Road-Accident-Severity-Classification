@@ -17,6 +17,7 @@ st.set_page_config(page_title="Accident Severity Prediction App",
 
 options_age = ['18-30', '31-50', 'Over 51', 'Unknown', 'Under 18']
 
+
 options_acc_area = ['Other', 'Office areas', 'Residential areas', ' Church areas',
        ' Industrial areas', 'School areas', '  Recreational areas',
        ' Outside rural areas', ' Hospital areas', '  Market areas',
