@@ -109,7 +109,7 @@ def main():
         
         
       
-         submit = st.form_submit_button("Predict")
+        submit = st.form_submit_button("Predict")
 
 
 
