@@ -132,7 +132,7 @@ def main():
         
         
         data = np.array([driver_age,driving_experience,vehicle_type,accident_area, lanes,Road_allignment,Types_of_Junction,Road_surface_conditions,
-                         Light_conditions,Weather_conditions,Type_of_collision,Number_of_vehicles_involved,casualties, Vehicle_movement,casualty_class,
+                         Light_conditions,Weather_conditions,Type_of_collision,Number_of_vehicles_involved,Number_of_casualties, Vehicle_movement,casualty_class,
                          Age_band_of_casualty,Pedestrian_movement,accident_cause
                           ]).reshape(1,-1)
 
