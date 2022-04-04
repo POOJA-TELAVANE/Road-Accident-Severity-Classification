@@ -17,7 +17,7 @@ Steps followed:=
 
 4- Filling missing values with mode, all missing values were from categorical features
 
-5- Perfromed feature engineering
+5- Performed feature engineering
 
 6- Splitted dataframe into training and testing data
 
@@ -32,7 +32,7 @@ Steps followed:=
 
 11- created app.py, procfile, requirements.txt, prediction file, get_model.py files for streamlit and Heroku
 
-12- Build the app woth the help of Streamlit and deployed it as web app using Heroku
+12- Build the app with the help of Streamlit and deployed it as web app using Heroku
 
 
 
